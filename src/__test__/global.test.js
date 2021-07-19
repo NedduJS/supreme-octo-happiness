@@ -26,3 +26,37 @@ test('Probar un Callback', () => {
     expect(str).toBe('tnevnI');
   });
 });
+
+const reverseString2 = (str) => {
+  return new Promise((resolve, reject) => {
+    if (!str) {
+      reject(Error('No existe texto'));
+    }
+    resolve(str.split('').reverse().join(''));
+  });
+};
+
+test('Probar una Promesa', () => {
+  return reverseString2('Hola').then((string) => expect(string).toBe('aloH'));
+});
+
+test('Probar async/await', async () => {
+  const string = await reverseString2('Wander');
+  expect(string).toBe('rednaW');
+});
+
+afterEach(() => {
+  console.log('Acabó una prueba');
+});
+
+afterAll(() => {
+  console.log('Pruebas terminadas');
+});
+
+beforeEach(() => {
+  console.log('Iniciando Prueba');
+});
+
+beforeAll(() => {
+  console.log('Testing con Jest');
+});

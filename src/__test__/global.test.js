@@ -45,7 +45,7 @@ test('Probar async/await', async () => {
   expect(string).toBe('rednaW');
 });
 
-afterEach(() => {
+/* afterEach(() => {
   console.log('Acabó una prueba');
 });
 
@@ -59,4 +59,4 @@ beforeEach(() => {
 
 beforeAll(() => {
   console.log('Testing con Jest');
-});
+}); */
